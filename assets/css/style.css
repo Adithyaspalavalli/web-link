@@ -208,10 +208,15 @@ article {
 
 .icon-box ion-icon { --ionicon-stroke-width: 35px; }
 
-article { display: none; }
+article { 
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
 
 article.active {
   display: block;
+  opacity: 1;
   animation: fade 0.5s ease backwards;
 }
 
@@ -1221,6 +1226,80 @@ textarea.form-input::-webkit-resizer { display: none; }
 
 .form-btn:disabled:hover::before { background: var(--bg-gradient-jet); }
 
+.contact-details {
+  display: grid;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: var(--bg-gradient-onyx);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition-1);
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  background: var(--bg-gradient-jet);
+}
+
+.contact-item .icon-box {
+  background: var(--border-gradient-onyx);
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: var(--orange-yellow-crayola);
+  box-shadow: var(--shadow-1);
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-title {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  margin-bottom: 5px;
+}
+
+.contact-link,
+.contact-info address {
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  transition: var(--transition-1);
+}
+
+.contact-link:hover {
+  color: var(--orange-yellow-crayola);
+}
+
+.contact-info address {
+  font-style: normal;
+}
+
+@media (min-width: 580px) {
+  .contact-details {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contact-details {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
 
 
 
@@ -1879,4 +1958,108 @@ textarea.form-input::-webkit-resizer { display: none; }
 
   .timeline-text { max-width: 700px; }
 
+}
+
+.resume-download {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.resume-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-gradient-onyx);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  padding: 15px 25px;
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  transition: var(--transition-1);
+  box-shadow: var(--shadow-1);
+}
+
+.resume-btn:hover {
+  background: var(--bg-gradient-jet);
+  transform: translateY(-2px);
+}
+
+.resume-btn ion-icon {
+  font-size: 20px;
+  --ionicon-stroke-width: 40px;
+}
+
+article[data-page="contact"] .contact-details {
+  display: grid;
+  gap: 25px;
+  margin-top: 30px;
+}
+
+article[data-page="contact"] .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: var(--bg-gradient-onyx);
+  border: 1px solid var(--jet);
+  border-radius: 14px;
+  box-shadow: var(--shadow-1);
+  transition: var(--transition-1);
+}
+
+article[data-page="contact"] .contact-item:hover {
+  transform: translateY(-2px);
+  background: var(--bg-gradient-jet);
+}
+
+article[data-page="contact"] .contact-item .icon-box {
+  background: var(--border-gradient-onyx);
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: var(--orange-yellow-crayola);
+  box-shadow: var(--shadow-1);
+}
+
+article[data-page="contact"] .contact-info {
+  flex: 1;
+}
+
+article[data-page="contact"] .contact-title {
+  color: var(--light-gray);
+  font-size: var(--fs-7);
+  margin-bottom: 5px;
+}
+
+article[data-page="contact"] .contact-link,
+article[data-page="contact"] .contact-info address {
+  color: var(--white-2);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  transition: var(--transition-1);
+}
+
+article[data-page="contact"] .contact-link:hover {
+  color: var(--orange-yellow-crayola);
+}
+
+article[data-page="contact"] .contact-info address {
+  font-style: normal;
+}
+
+@media (min-width: 580px) {
+  article[data-page="contact"] .contact-details {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  article[data-page="contact"] .contact-details {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
